@@ -6,6 +6,12 @@ from streamlit_folium import st_folium
 import folium
 
 st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="IWT Hotspots",
+    page_icon="✈️",  # airplane emoji as favicon
+    layout="wide"
+)
+
 
 # Add main title
 st.title("Undetected Hotspots of Illegal Wildlife Trade Activity")

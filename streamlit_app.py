@@ -78,7 +78,8 @@ filtered_fp = fp[
 
 # Build Map
 map_center = [filtered_fp["latitude"].median(), filtered_fp["longitude"].median()]
-fmap = folium.Map(location=map_center, zoom_start=2, tiles="cartodbpositron")
+# fmap = folium.Map(location=map_center, zoom_start=2, tiles="cartodbpositron")
+fmap = folium.Map(location=map_center, zoom_start=2, tiles=f"https://{{s}}.basemaps.cartocdn.com/light_all/{{z}}/{{x}}/{{y}}.png?key={st.secrets['CARTO_API_KEY']}", attr="&copy; OpenStreetMap contributors &copy; CARTO")
 
 norm_conf = colors.Normalize(vmin=min_conf, vmax=max_conf)
 cmap = cm.Reds
